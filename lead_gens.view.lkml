@@ -5,7 +5,7 @@ view: lead_gens {
     sql: SELECT
           FLP.date_added::DATE as date_added
           ,FLP.url
-          ,FLP.emailaddress as email_addr
+          ,FLP.emailaddress
           FROM sfmc.foxnation_lead_prospect as FLP
           WHERE 1=1
           AND FLP.date_added::DATE >= '2019-04-05'
@@ -16,7 +16,7 @@ view: lead_gens {
 
           SELECT FLP.date_added::DATE as date_added
           ,FLP.url
-          ,FLP.emailaddress as email_addr
+          ,FLP.emailaddress
           FROM sfmc.nation_lead_prospect_v2 as FLP
           WHERE 1=1
           AND FLP.date_added::DATE >= '2019-10-31'
@@ -26,9 +26,18 @@ view: lead_gens {
   }
 
   # Define your dimensions and measures here, like this:
-  dimension: date_added {
-    type: date
-    sql: ${TABLE}.date ;;
+  dimension_group: date_added {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      day_of_week,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: ${TABLE}.date_added ;;
   }
 
   dimension: url {
