@@ -35,6 +35,41 @@ view: ppv_pivot {
     sql: ${TABLE}.fights ;;
   }
 
+  dimension: purch_ppv1 {
+    type: string
+    sql: ${TABLE}.ppv1_flag ;;
+  }
+
+  dimension: purch_ppv2 {
+    type: string
+    sql: ${TABLE}.ppv2_flag ;;
+  }
+
+  dimension: purch_ppv3 {
+    type: string
+    sql: ${TABLE}.ppv3_flag ;;
+  }
+
+  dimension: purch_ppv4 {
+    type: string
+    sql: ${TABLE}.ppv4_flag ;;
+  }
+
+  dimension: purch_ppv5 {
+    type: string
+    sql: ${TABLE}.ppv5_flag ;;
+  }
+
+  dimension: purch_ppv6 {
+    type: string
+    sql: ${TABLE}.ppv6_flag ;;
+  }
+
+  dimension: purch_ppv7 {
+    type: string
+    sql: ${TABLE}.ppv7_flag ;;
+  }
+
   dimension: purch_ppv9 {
     type: string
     sql: ${TABLE}.ppv9_flag ;;
