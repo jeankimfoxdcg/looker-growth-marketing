@@ -115,4 +115,19 @@ view: ppv_transactions {
     type: string
     sql: ${TABLE}.ppv_number ;;
   }
+
+  measure: purchasers {
+    type: count_distinct
+    sql: ${external_profile_id} ;;
+  }
+
+  measure: orders {
+    type: count_distinct
+    sql: ${order_id} ;;
+  }
+
+  measure: num_fights {
+    type: count_distinct
+    sql: ${ppv_number} ;;
+  }
 }

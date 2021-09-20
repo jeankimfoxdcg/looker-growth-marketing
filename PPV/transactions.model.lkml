@@ -10,3 +10,5 @@ explore: ppv_transactions {
     sql_where:  ${ppv_refunds.order_id} is null;;
   }
 }
+
+explore: ppv_pivot {}
